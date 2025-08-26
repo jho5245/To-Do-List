@@ -36,6 +36,7 @@
         }
         if (new Date(date) < new Date()) {
             alert('이미 지나간 시간으로는 날짜를 지정할 수 없습니다.');
+            return false;
         }
         return true;
     }
