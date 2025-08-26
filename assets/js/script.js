@@ -4,6 +4,7 @@
         일정 추가
        ======================= */
 
+    // 추가 버튼을 클릭하여 일정 추가
     document.getElementById('btn-add').addEventListener('click', () => {
         const inputSchedule = document.getElementById('input-schedule');
         const inputDate = document.getElementById('input-date');
@@ -78,9 +79,12 @@
 
     // 정렬 유형
     const SORT_TYPE = {
+        // 이름순
+        SCHEDULE: "schedule",
+        // 추가순
         DATE_ADDED: "date_added",
-        DATE_TIME: "date_time",
-        SCHEDULE: "schedule"
+        // 날짜순
+        DATE_TIME: "date_time"
     };
 
     // 정렬할 일정
@@ -105,6 +109,7 @@
         });
     }
 
+    // 정렬 함수를 반환하는 함수
     function getSort(sortType) {
         switch (sortType) {
             // 이름순 정렬
