@@ -1,0 +1,61 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+
+}
+
+#to-do-add, #to-do {
+    text-align: center;
+    background-color: rgb(231, 230, 230);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px auto;
+    width: 600px;
+}
+
+#input-schedule {
+    width: 300px;
+}
+
+#controller {
+    width: fit-content;
+    margin-left: auto;
+}
+
+#btn-add, .btn-remove, #btn-sort-schedule, #btn-sort-add, #btn-sort-time {
+    color: white;
+    background-color: rgb(179, 179, 179);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#to-do-list {
+    list-style: none;
+    padding: 0px;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.to-do-item {
+    background-color: rgb(241, 241, 241);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.to-do-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.to-do-date {
+    text-align: left;
+    color: gray;
+}
