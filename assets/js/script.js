@@ -77,8 +77,8 @@
         일정 정렬(추가순/날짜순)
        ======================= */
 
-    // 정렬 유형
-    const SORT_TYPE = {
+    // 정렬 비교 유형
+    const COMPARE_TYPE = {
         // 이름순
         SCHEDULE: "schedule",
         // 추가순
@@ -96,24 +96,24 @@
     const btnSortTime = document.getElementById('btn-sort-time');
 
     // 버튼 클릭 리스너 등록
-    btnSortSchedule.addEventListener('click', () => { sort(SORT_TYPE.SCHEDULE); });
-    btnSortAdd.addEventListener('click', () => { sort(SORT_TYPE.DATE_ADDED); });
-    btnSortTime.addEventListener('click', () => { sort(SORT_TYPE.DATE_TIME); });
+    btnSortSchedule.addEventListener('click', () => { sort(COMPARE_TYPE.SCHEDULE); });
+    btnSortAdd.addEventListener('click', () => { sort(COMPARE_TYPE.DATE_ADDED); });
+    btnSortTime.addEventListener('click', () => { sort(COMPARE_TYPE.DATE_TIME); });
 
     // 정렬
-    function sort(sortType) {
-        const sortFunction = getSort(sortType);
+    function sort(compareType) {
+        const comparator = getComparator(compareType);
         const array = Array.from(toDoList.children);
-        array.sort(sortFunction).forEach(item => {
+        array.sort(comparator).forEach(item => {
             toDoList.appendChild(item);
         });
     }
 
-    // 정렬 함수를 반환하는 함수
-    function getSort(sortType) {
-        switch (sortType) {
+    // 요소 비교를 반환하는 함수
+    function getComparator(compareType) {
+        switch (compareType) {
             // 이름순 정렬
-            case SORT_TYPE.SCHEDULE: {
+            case COMPARE_TYPE.SCHEDULE: {
                 return (function (a, b) {
                     const aText = a.querySelector('.to-do-text > span').innerText;
                     const bText = b.querySelector('.to-do-text > span').innerText;
@@ -121,13 +121,13 @@
                 });
             }
             // 추가순 정렬
-            case SORT_TYPE.DATE_ADDED: {
+            case COMPARE_TYPE.DATE_ADDED: {
                 return (function (a, b) {
                     return a.getAttribute('data-date-added') - b.getAttribute('data-date-added');
                 });
             }
             // 날짜순 정렬
-            case SORT_TYPE.DATE_TIME: {
+            case COMPARE_TYPE.DATE_TIME: {
                 return (function (a, b) {
                     return a.getAttribute('data-date-time') - b.getAttribute('data-date-time');
                 });
