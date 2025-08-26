@@ -16,9 +16,14 @@
     function addSchedule(schedule, date) {
         if (!validateInput(schedule, date)) return;
 
-        const item = makeScheduleItem(schedule, date);
         const toDoList = document.getElementById('to-do-list');
-        toDoList.appendChild(item);
+
+        const toDoItem = makeScheduleItem(schedule, date);
+        const dateAdded = new Date();
+        const dateTime = new Date(date);
+        setDate(toDoItem, dateAdded, dateTime);
+        
+        toDoList.appendChild(toDoItem);
 
         clearInput();
     }
@@ -48,9 +53,6 @@
     function makeScheduleItem(schedule, date) {
         const toDoItem = document.createElement('li');
         toDoItem.classList.add('to-do-item');
-        const dateAdded = new Date();
-        const dateTime = new Date(date);
-        setDate(toDoItem, dateAdded, dateTime);
 
         const toDoText = document.createElement('div');
         toDoText.classList.add('to-do-text');
