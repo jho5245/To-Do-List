@@ -4,10 +4,11 @@
         일정 추가
        ======================= */
 
+    const inputSchedule = document.getElementById('input-schedule');
+    const inputDate = document.getElementById('input-date');
+
     // 추가 버튼을 클릭하여 일정 추가
     document.getElementById('btn-add').addEventListener('click', () => {
-        const inputSchedule = document.getElementById('input-schedule');
-        const inputDate = document.getElementById('input-date');
         addSchedule(inputSchedule.value, inputDate.value);
     });
 
@@ -18,6 +19,8 @@
         const item = makeScheduleItem(schedule, date);
         const toDoList = document.getElementById('to-do-list');
         toDoList.appendChild(item);
+
+        clearInput();
     }
 
     // 입력받은 값 유효성 검사
@@ -72,6 +75,12 @@
     function setDate(toDoItem, dateAdded, dateTime) {
         toDoItem.setAttribute('data-date-added', dateAdded.getTime());
         toDoItem.setAttribute('data-date-time', dateTime.getTime());
+    }
+
+    // 입력값 초기화
+    function clearInput() {
+        inputSchedule.value = '';
+        inputDate.value = '';
     }
 
     /* =======================
