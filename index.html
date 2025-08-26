@@ -7,24 +7,24 @@
     <title>To-Do List</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <div id="main">
-        <div id="to-do-add">
-            <input id="input-schedule" placeholder="추가할 일정 입력" maxlength="30">
-            <input id="input-date" type="datetime-local">
-            <button id="btn-add">추가</button>
+    <div id="to-do-add">
+        <input id="input-schedule" placeholder="추가할 일정 입력" maxlength="30">
+        <input id="input-date" type="datetime-local">
+        <button id="btn-add">추가</button>
+    </div>
+    <div id="to-do">
+        <div id="controller">
+            <button id="btn-sort-schedule">이름순</button>
+            <button id="btn-sort-add">추가순</button>
+            <button id="btn-sort-time">날짜순</button>
         </div>
-        <div id="to-do">
-            <div id="controller">
-                <button id="btn-sort-schedule">이름순</button>
-                <button id="btn-sort-add">추가순</button>
-                <button id="btn-sort-time">날짜순</button>
-            </div>
-            <ul id="to-do-list">
-                <!-- 일정이 추가되는 곳 -->
-            </ul>
-        </div>
+        <ul id="to-do-list">
+            <!-- 일정이 추가되는 곳 -->
+        </ul>
     </div>
 </body>
 <script src="assets/js/script.js"></script>
+
 </html>

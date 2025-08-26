@@ -4,10 +4,7 @@ html, body {
     box-sizing: border-box;
 }
 
-#main {
-
-}
-
+/* 일정 추가, 일정 목록 */
 #to-do-add, #to-do {
     text-align: center;
     background-color: rgb(231, 230, 230);
@@ -17,15 +14,18 @@ html, body {
     width: 600px;
 }
 
+/* 일정 입력란 */
 #input-schedule {
     width: 300px;
 }
 
+/* 정렬 제어 */
 #controller {
     width: fit-content;
     margin-left: auto;
 }
 
+/* 버튼 */
 #btn-add, .btn-remove, #btn-sort-schedule, #btn-sort-add, #btn-sort-time {
     color: white;
     background-color: rgb(179, 179, 179);
@@ -36,6 +36,7 @@ html, body {
     cursor: pointer;
 }
 
+/* 일정 목록 */
 #to-do-list {
     list-style: none;
     padding: 0px;
@@ -43,6 +44,7 @@ html, body {
     height: 500px;
 }
 
+/* 일정 목록 요소 */
 .to-do-item {
     background-color: rgb(241, 241, 241);
     border-radius: 10px;
@@ -50,11 +52,13 @@ html, body {
     padding: 5px;
 }
 
+/* 일정 내용, 삭제 버튼 */
 .to-do-text {
     display: flex;
     justify-content: space-between;
 }
 
+/* 일정 날짜 */
 .to-do-date {
     text-align: left;
     color: gray;
